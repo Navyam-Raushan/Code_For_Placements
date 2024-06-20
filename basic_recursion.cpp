@@ -24,25 +24,45 @@ void print_one_to_n(int start, int n)
 
 void print_n_to_one(int end, int n)
 {
-    if(end > n)
+    if (end > n)
         return;
-    
-    cout<< n << endl;
-    print_n_to_one(end, n-1);
+
+    cout << n << endl;
+    print_n_to_one(end, n - 1);
 }
 
+// Optimal approach return n(n+1)/2
+// But trying here with recursion for practice - Parametrised approach
+int sum_of_first_n(int n, int sum = 0)
+{
 
+    if (n == 0)
+        return sum;
+
+    sum = sum + n;
+    return sum_of_first_n(n - 1, sum);
+}
+
+// Functional approach (more optimal)
+// Important
+int sum_by_func(int n)
+{
+    if (n == 0)
+        return 0;
+    
+    return n + sum_by_func(n-1);
+}
 
 int main()
 {
     string name;
-    int n;
+    int n, res;
     // getline(cin, name);
 
     cin >> n;
 
-    // print_name_n_times(name, n, 1);
-    print_n_to_one(1, n);
+    res =sum_of_first_n(n);
+    cout<< res;
 
     return 0;
 }
