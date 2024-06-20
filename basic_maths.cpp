@@ -216,26 +216,59 @@ bool armstrong_number(int n)
         return false;
 }
 
+/*
+    In this we will run the loops only half times
+    as after sqroot of n the factors repeats itself(mirror wise)
+    So we will run loop to only upto sqrt
+
+*/
+vector<int> optimal_find_factors(int n)
+{
+    vector<int> factors;
+
+    for (int i = 1; i <= sqrt(n); i++)
+    {
+        if (n % i == 0)
+        {
+            factors.push_back(i);
+
+            // Now for the remaining factors (after sqrt of number)
+            if (i != n / i)
+            {
+                factors.push_back(n / i);
+            }
+        }
+    }
+    sort(factors.begin(), factors.end());
+
+    return factors;
+}
+
 int main()
 {
     int num1, num2, res;
+    vector<int> result;
 
     bool final_res;
     cin >> num1;
     // cin >> num2;
 
-    final_res = armstrong_number(num1);
-    cout << final_res;
+    // final_res = armstrong_number(num1);
+    // cout << final_res;
 
-    // res = gcd_optimal(num1, num2);
-    // cout << res;
+    result = optimal_find_factors(num1);
+    for (int i : result)
+    {
+        cout<< i<< " ";
+    }
+    
 
     // if (res == 1)
     //     cout<< "A Palindrome" << endl;
     // else
     //     cout<< "Not a Palindrome" << endl;
 
-    // vector<int> result;
+    //
     // for (int i : result)
     // {
     //     // if (i != 0)
