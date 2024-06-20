@@ -245,6 +245,7 @@ vector<int> optimal_find_factors(int n)
 }
 
 // Check if a number is prime or not
+// Run the loop upto square root That's optimal approach
 bool is_prime(int n)
 {
     // Find the factors, if there is only 2 factors its prime
