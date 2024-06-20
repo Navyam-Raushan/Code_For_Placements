@@ -207,7 +207,7 @@ bool armstrong_number(int n)
     for (int i : digits)
     {
 
-        sum += pow(i, size);
+        sum = sum + pow(i, size);
     }
 
     if (sum == n)
