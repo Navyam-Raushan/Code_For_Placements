@@ -1,6 +1,6 @@
-# PlacementPrepFunctions
+# CodeForPlacements
 
-Welcome to the PlacementPrepFunctions repository! This repository contains a collection of important functions and algorithms to help you prepare for coding interviews and placements. The repository will be continuously updated with new functions, examples, and explanations.
+Welcome to the CodeForPlacements repository! This repository contains a collection of important functions and algorithms to help you prepare for coding interviews and placements. The repository will be continuously updated with new functions, examples, and explanations.
 
 ## Table of Contents
 
