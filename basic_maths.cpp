@@ -244,6 +244,21 @@ vector<int> optimal_find_factors(int n)
     return factors;
 }
 
+// Check if a number is prime or not
+bool is_prime(int n)
+{
+    // Find the factors, if there is only 2 factors its prime
+    vector<int> factors = optimal_find_factors(n);
+
+    if (factors.size() == 2)
+    {
+        return true;
+    }
+    else    
+        return false;
+}
+
+
 int main()
 {
     int num1, num2, res;
@@ -253,15 +268,14 @@ int main()
     cin >> num1;
     // cin >> num2;
 
-    // final_res = armstrong_number(num1);
-    // cout << final_res;
+    final_res = is_prime(num1);
+    cout << final_res;
 
-    result = optimal_find_factors(num1);
-    for (int i : result)
-    {
-        cout<< i<< " ";
-    }
-    
+    // result = optimal_find_factors(num1);
+    // for (int i : result)
+    // {
+    //     cout << i << " ";
+    // }
 
     // if (res == 1)
     //     cout<< "A Palindrome" << endl;
